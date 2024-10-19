@@ -1,0 +1,8 @@
+services:
+  mysqldb:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_DATABASE=appdb
+    ports:
+      - 3007:3306
