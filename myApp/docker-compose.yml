@@ -6,3 +6,7 @@ services:
       - MYSQL_DATABASE=appdb
     ports:
       - 3007:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+ mysql_data:

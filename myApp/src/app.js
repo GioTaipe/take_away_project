@@ -1,19 +1,16 @@
 // Configuración principal de Express (entry point)
 require('dotenv').config();
 const express = require("express");
-const pool = require('./config/database');
-
+const initializeDatabase = require('./config/index.js');
+const userRoutes = require('./routes/userRoutes.js')
 const app = express();
 
-app.get('/',(req,res) => {
-    res.send('Hello world')
+app.use(express.json());
+
+initializeDatabase();
+
+app.use('/api', userRoutes);
+
+app.listen(3000, () => {
+    console.log('Servidor en el puerto', 3000);
 });
-
-app.get('/ping', async (req, res) => {
-    const result= await pool.query('SELECT NOW()')
-    res.json(result[0]);
-})
-
-app.listen(3000)
-console.log('Serve on port', 3000);
-
