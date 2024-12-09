@@ -3,8 +3,6 @@ const Product = require('../models/Product.js');
 exports.createProduct = async (req, res) => {
   try {
     const { name, description, price, stock, category } = req.body;
-
-    // Obtén la URL de la imagen desde Cloudinary
     const image_url = req.file ? req.file.path : null;
 
     // Crea el producto en la base de datos
