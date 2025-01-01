@@ -43,7 +43,7 @@ const Product = sequelize.define('Product', {
     allowNull: true,
   },
 }, {
-  tableName: 'products', // Nombre de la tabla en la base de datos
+  tableName: 'PRODUCTS', // Nombre de la tabla en la base de datos
   timestamps: false, // Agrega automáticamente createdAt y updatedAt
 });
 

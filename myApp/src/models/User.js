@@ -37,7 +37,7 @@ const User = sequelize.define('User', {
         defaultValue: 'user'
     }
 }, {
-    tableName: 'users',  // Nombre de la tabla en la base de datos
+    tableName: 'USERS',  // Nombre de la tabla en la base de datos
     timestamps: false    // Desactivar createdAt y updatedAt
 });
 
